@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "gr.kavvada.warehouseerp",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "warehouseERP",
+    "packageName": "gr.kavvada.warehouseerp",
+    "packageFolder": "gr/kavvada/warehouseerp",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MGVjZGI0YmJiMjEzZDQ1OTVhZGRiNDZjNWYyMDM4YTcyNDlmZTVkNWNiZTgyOWIwZDM2NDk4YmVhZmVlOTY0NmExZDVjN2I1NDBmMGEwZDc2ZDRiZGMxNGM4NDg2MDg2Y2I3Mzk1YWVmY2NkZTE1NmIwZDU5NDRlYTIyNWYxYzY=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "flatly",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1587206179747,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "el"],
+    "blueprints": []
+  }
+}
