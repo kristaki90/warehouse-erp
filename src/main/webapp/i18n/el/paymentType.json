@@ -1,0 +1,22 @@
+{
+  "warehouseErpApp": {
+    "paymentType": {
+      "home": {
+        "title": "Payment Types",
+        "createLabel": "Δημιουργήστε ένα νέο Payment Type",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Payment Type",
+        "notFound": "No Payment Types found"
+      },
+      "created": "Ένα νέο Payment Type έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Payment Type έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Payment Type έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Payment Type {{ id }};"
+      },
+      "detail": {
+        "title": "Payment Type"
+      },
+      "description": "Description"
+    }
+  }
+}

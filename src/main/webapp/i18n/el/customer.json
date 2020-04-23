@@ -1,0 +1,26 @@
+{
+  "warehouseErpApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Δημιουργήστε ένα νέο Customer",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Customer",
+        "notFound": "No Customers found"
+      },
+      "created": "Ένα νέο Customer έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Customer έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Customer έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Customer {{ id }};"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "companyName": "Company Name",
+      "vatNumber": "Vat Number",
+      "phone": "Phone",
+      "mobile": "Mobile",
+      "address": "Address"
+    }
+  }
+}
