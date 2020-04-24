@@ -5,7 +5,7 @@ import gr.kavvada.warehouseerp.domain.Invoice_;
 import gr.kavvada.warehouseerp.domain.PaymentType;
 import gr.kavvada.warehouseerp.repository.InvoiceRepository;
 import gr.kavvada.warehouseerp.service.dto.PaymentTypeCountDTO;
-import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,10 +1,51 @@
 <div class="row">
     <div class="col-md-12">
-<!--        <mat-list>-->
-<!--            <mat-list-item> Pepper </mat-list-item>-->
-<!--            <mat-list-item> Salt </mat-list-item>-->
-<!--            <mat-list-item> Paprika </mat-list-item>-->
-<!--        </mat-list>-->
+        <mat-list *ngFor="let paymentTypeCount of paymentTypeCounts">
+            <mat-list-item class="row">
+                <div class="col-md-3">
+                    <span>{{ paymentTypeCount.paymentType.description }}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{ paymentTypeCount.count }}</span>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div class="col-md-12 row">
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <label>The most used Payment Methods</label>
+            </div>
+            <mat-list *ngFor="let mostUsedPaymentMethod of mostAndLeastUsed?.mostUsed">
+                <mat-list-item>
+                    <div class="col-md-12 row">
+                        <div class="col-md-6">
+                            <span>{{ mostUsedPaymentMethod.paymentType.description }}</span>
+                        </div>
+                        <div class="col-md-2">
+                            <span>{{ mostUsedPaymentMethod['count'] }}</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <label>The least used Payment Methods</label>
+            </div>
+            <mat-list *ngFor="let leastUsedPaymentMethod of mostAndLeastUsed?.leastUsed">
+                <mat-list-item>
+                    <div class="col-md-12 row">
+                        <div class="col-md-6">
+                            <span>{{ leastUsedPaymentMethod.paymentType.description }}</span>
+                        </div>
+                        <div class="col-md-2">
+                            <span>{{ leastUsedPaymentMethod['count'] }}</span>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
     </div>
 
 </div>
