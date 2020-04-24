@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-invoice-heading" jhiTranslate="warehouseErpApp.invoice.home.createOrEditLabel">Create or edit a Invoice</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="warehouseErpApp.invoice.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="input-group">
+                        <input id="field_createdDate" type="text" class="form-control" name="createdDate" ngbDatepicker #createdDateDp="ngbDatepicker" formControlName="createdDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="createdDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="warehouseErpApp.invoice.comments" for="field_comments">Comments</label>
+                    <input type="text" class="form-control" name="comments" id="field_comments"
+                           formControlName="comments"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="warehouseErpApp.invoice.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customer">
+                        <option *ngIf="!editForm.get('customer')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="customerOption.id === editForm.get('customer')!.value?.id ? editForm.get('customer')!.value : customerOption" *ngFor="let customerOption of customers; trackBy: trackById">{{ customerOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('customer')!.invalid && (editForm.get('customer')!.dirty || editForm.get('customer')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('customer')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="warehouseErpApp.invoice.paymentType" for="field_paymentType">Payment Type</label>
+                    <select class="form-control" id="field_paymentType" name="paymentType" formControlName="paymentType">
+                        <option *ngIf="!editForm.get('paymentType')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="paymentTypeOption.id === editForm.get('paymentType')!.value?.id ? editForm.get('paymentType')!.value : paymentTypeOption" *ngFor="let paymentTypeOption of paymenttypes; trackBy: trackById">{{ paymentTypeOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('paymentType')!.invalid && (editForm.get('paymentType')!.dirty || editForm.get('paymentType')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('paymentType')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="warehouseErpApp.invoice.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
+                        <option *ngIf="!editForm.get('user')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="userOption.id === editForm.get('user')!.value?.id ? editForm.get('user')!.value : userOption" *ngFor="let userOption of users; trackBy: trackById">{{ userOption.login }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('user')!.invalid && (editForm.get('user')!.dirty || editForm.get('user')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('user')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="warehouseErpApp.invoice.product" for="field_products">Product</label>
+                    <select class="form-control" id="field_products" multiple name="products" formControlName="products">
+                        <option [ngValue]="getSelected(editForm.get('products')!.value, productOption)" *ngFor="let productOption of products; trackBy: trackById">{{ productOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('products')!.invalid && (editForm.get('products')!.dirty || editForm.get('products')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('products')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "warehouseErpApp": {
+    "invoice": {
+      "home": {
+        "title": "Invoices",
+        "createLabel": "Δημιουργήστε ένα νέο Invoice",
+        "createOrEditLabel": "Δημιουργήστε η επεξεργαστείτε ένα Invoice",
+        "notFound": "No Invoices found"
+      },
+      "created": "Ένα νέο Invoice έχει δημιουργηθεί με αναγνωριστικό {{ param }}",
+      "updated": "Ένα Invoice έχει ενημερωθεί με αναγνωριστικό {{ param }}",
+      "deleted": "Ένα Invoice έχει διαγραφτεί με αναγνωριστικό {{ param }}",
+      "delete": {
+        "question": "Είστε βέβαιοι όταν θέλετε να διαγράψετε το ακόλουθο Invoice {{ id }};"
+      },
+      "detail": {
+        "title": "Invoice"
+      },
+      "createdDate": "Created Date",
+      "comments": "Comments",
+      "customer": "Customer",
+      "paymentType": "Payment Type",
+      "user": "User",
+      "product": "Product"
+    }
+  }
+}

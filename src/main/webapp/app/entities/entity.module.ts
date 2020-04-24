@@ -15,6 +15,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'payment-type',
         loadChildren: () => import('./payment-type/payment-type.module').then(m => m.WarehouseErpPaymentTypeModule)
+      },
+      {
+        path: 'invoice',
+        loadChildren: () => import('./invoice/invoice.module').then(m => m.WarehouseErpInvoiceModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

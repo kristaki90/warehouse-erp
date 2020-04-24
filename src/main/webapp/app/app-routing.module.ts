@@ -22,6 +22,14 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule)
         },
         {
+          path: 'displays',
+          data: {
+            authorities: []
+          },
+          canActivate: [UserRouteAccessService],
+          loadChildren: () => import('./displays/displays.module').then(m => m.WarehouseErpDisplaysModule)
+        },
+        {
           path: 'account',
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
         },

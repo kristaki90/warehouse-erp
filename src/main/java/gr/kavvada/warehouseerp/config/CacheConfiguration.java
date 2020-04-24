@@ -48,6 +48,8 @@ public class CacheConfiguration {
             createCache(cm, gr.kavvada.warehouseerp.domain.Product.class.getName());
             createCache(cm, gr.kavvada.warehouseerp.domain.Customer.class.getName());
             createCache(cm, gr.kavvada.warehouseerp.domain.PaymentType.class.getName());
+            createCache(cm, gr.kavvada.warehouseerp.domain.Invoice.class.getName());
+            createCache(cm, gr.kavvada.warehouseerp.domain.Invoice.class.getName() + ".products");
             // jhipster-needle-ehcache-add-entry
         };
     }
